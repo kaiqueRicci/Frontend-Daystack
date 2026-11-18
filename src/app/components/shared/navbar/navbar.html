@@ -1,0 +1,40 @@
+<nav class="navbar navbar-dark bg-dark px-4 py-3 border-bottom border-secondary">
+    <div class="container-fluid px-0 gap-3">
+     <a routerLink="/dashboard" class="navbar-brand d-flex align-items-center gap-2 mb-0">
+  <span
+    class="bg-white text-primary rounded-3 d-inline-flex align-items-center justify-content-center p-2"
+    aria-hidden="true"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.8"
+      stroke-linecap="round"
+    >
+      <rect x="2.5" y="4" width="19" height="16" rx="3" />
+      <path d="M7 8v8m5-8v5m5-5v3" />
+    </svg>
+  </span>
+  <span class="fw-bold fs-4">Daystack</span>
+</a>
+
+      <div class="d-flex align-items-center gap-3 ms-auto">
+        <!-- Substitua pelo nome do usuário autenticado -->
+        <div class="text-end text-white">
+          <small class="d-block text-white-50">Olá,</small>
+          <span class="fw-semibold">{{ nomeUsuario() }} - {{ perfilUsuario() }}</span>
+        </div>
+
+        <!-- Conecte este botão à ação de logout -->
+        <button 
+        (click)="logout()"
+        type="button" class="btn btn-outline-light px-3">
+          Sair
+        </button>
+      </div>
+    </div>
+  </nav>

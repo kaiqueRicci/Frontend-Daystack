@@ -1,0 +1,133 @@
+<div class="container-fluid min-vh-100 d-flex flex-column p-0 bg-light">
+  <!-- Navbar -->
+  <app-navbar class="d-block"></app-navbar>
+
+  <div class="row g-0 flex-grow-1">
+    <!-- Sidebar -->
+    <app-sidebar class="col-12 col-md-4 col-lg-3 col-xl-2 d-flex flex-column bg-dark"></app-sidebar>
+
+    <!-- Área central -->
+    <main class="col-12 col-md-8 col-lg-9 col-xl-10 p-4 p-lg-5 d-flex flex-column">
+      <header class="mb-4">
+        <span class="badge bg-white text-primary border rounded-pill px-3 py-2 mb-3">
+          Seu espaço de organização
+        </span>
+
+        <h1 class="display-6 fw-bold text-dark">
+          Cadastro de tarefas
+        </h1>
+
+        <p class="lead text-secondary mb-0">
+          Organize suas atividades e defina o que merece sua atenção.
+        </p>
+      </header>
+
+      <!-- Formulário -->
+      <section class="card border rounded-4 shadow-sm mb-5" aria-labelledby="titulo-formulario">
+        <div class="card-body p-4 p-lg-5">
+          <div class="border-bottom pb-4 mb-4">
+            <h2 id="titulo-formulario" class="h4 fw-bold text-dark">
+              Nova tarefa
+            </h2>
+
+            <p class="text-secondary mb-0">
+              Preencha os dados abaixo para cadastrar sua tarefa.
+              Os campos com asterisco são obrigatórios.
+            </p>
+          </div>
+
+          <form>
+            <div class="row g-4">
+              <!-- Nome da tarefa -->
+              <div class="col-12 col-lg-8">
+                <label for="nomeTarefa" class="form-label fw-semibold">
+                  Nome da tarefa <span class="text-danger">*</span>
+                </label>
+
+                <input type="text" id="nomeTarefa" name="nome" class="form-control form-control-lg"
+                  placeholder="Ex.: Estudar Spring Security" aria-describedby="ajudaNome" required>
+
+                <div id="ajudaNome" class="form-text">
+                  Escolha um nome claro para identificar sua atividade.
+                </div>
+              </div>
+
+
+
+              <!-- Prioridade -->
+              <!-- Prioridade -->
+              <div class="col-12 col-md-6">
+                <label for="prioridadeTarefa" class="form-label fw-semibold">
+                  Prioridade <span class="text-danger">*</span>
+                </label>
+
+                <select id="prioridadeTarefa" name="prioridade" class="form-select form-select-lg"
+                  aria-describedby="ajudaPrioridade" required>
+                  <option value="" selected disabled>Selecione a prioridade</option>
+                  <option value="BAIXA">BAIXA</option>
+                  <option value="MEDIA">MEDIA</option>
+                  <option value="ALTA">ALTA</option>
+                </select>
+
+                <div id="ajudaPrioridade" class="form-text">
+                  Defina o nível de atenção necessário.
+                </div>
+              </div>
+
+              <!-- Categoria -->
+              <div class="col-12 col-md-6">
+                <label for="categoriaTarefa" class="form-label fw-semibold">
+                  Categoria <span class="text-danger">*</span>
+                </label>
+
+                <select id="categoriaTarefa" name="categoria" class="form-select form-select-lg"
+                  aria-describedby="ajudaCategoria" required>
+                  <option value="" selected disabled>Selecione a categoria</option>
+                  <option value="TRABALHO">Trabalho</option>
+                  <option value="ESTUDOS">Estudos</option>
+                  <option value="PESSOAL">Pessoal</option>
+                  <option value="SAUDE">Saúde</option>
+                  <option value="LAZER">Lazer</option>
+                  <option value="OUTROS">Outros</option>
+                </select>
+
+                <div id="ajudaCategoria" class="form-text">
+                  Escolha a categoria que melhor representa sua tarefa.
+                </div>
+              </div>
+
+              <!-- Comentários -->
+              <div class="col-12">
+                <label for="comentariosTarefa" class="form-label fw-semibold">
+                  Comentários
+                  <span class="text-secondary fw-normal">(opcional)</span>
+                </label>
+
+                <textarea id="comentariosTarefa" name="comentarios" class="form-control" rows="6"
+                  placeholder="Adicione detalhes, observações ou etapas importantes da tarefa."
+                  aria-describedby="ajudaComentarios"></textarea>
+
+                <div id="ajudaComentarios" class="form-text">
+                  Inclua informações que ajudem você a executar esta atividade.
+                </div>
+              </div>
+
+              <!-- Ações -->
+              <div class="col-12">
+                <div class="d-flex flex-column flex-sm-row justify-content-end gap-3 border-top pt-4">
+                  <button type="reset" class="btn btn-outline-secondary btn-lg px-4">
+                    Limpar
+                  </button>
+
+                  <button type="submit" class="btn btn-primary btn-lg px-4 fw-semibold">
+                    Cadastrar tarefa
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>

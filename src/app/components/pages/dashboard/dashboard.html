@@ -1,0 +1,57 @@
+<div class="container-fluid min-vh-100 d-flex flex-column p-0 bg-light">
+  <!-- Navbar -->
+  <app-navbar class="d-block"></app-navbar>
+
+  <div class="row g-0 flex-grow-1">
+    <!-- Sidebar -->
+    <div class="row g-0 flex-grow-1">
+      <app-sidebar class="col-12 col-md-4 col-lg-3 col-xl-2 d-flex flex-column bg-dark"></app-sidebar>
+
+      <!-- Área central -->
+      <main class="col-12 col-md-8 col-lg-9 col-xl-10 p-4 p-lg-5 d-flex flex-column">
+        <header class="mb-5">
+          <span class="badge bg-white text-primary border rounded-pill px-3 py-2 mb-3">
+            Seu espaço de organização
+          </span>
+
+          <!-- Substitua pelo nome do usuário autenticado -->
+          <h1 class="display-6 fw-bold text-dark">
+            Boas-vindas, {{ nomeUsuario() }}!
+          </h1>
+
+          <p class="lead text-secondary mb-0">
+            Seu próximo dia mais organizado começa aqui.
+          </p>
+        </header>
+
+        <section class="bg-white border rounded-4 p-4 p-lg-5 mb-4" aria-labelledby="organizar-dia">
+          <div class="row align-items-center g-4">
+            <div class="col-12 col-xl-8">
+              <h2 id="organizar-dia" class="h3 fw-bold text-dark">
+                Vamos organizar o seu dia?
+              </h2>
+
+              <p class="text-secondary mb-0">
+                Cadastre suas tarefas e consulte suas atividades para acompanhar
+                tudo o que precisa fazer.
+              </p>
+            </div>
+
+            <div class="col-12 col-xl-6">
+              <div class="d-flex flex-wrap justify-content-xl-end gap-3">
+                <a routerLink="/cadastrar-tarefa"
+                  class="btn btn-primary rounded-pill px-4 py-2 fw-semibold text-nowrap">
+                  Cadastrar tarefa
+                </a>
+
+                <a routerLink="/consultar-tarefa"
+                  class="btn btn-outline-primary rounded-pill px-4 py-2 fw-semibold text-nowrap">
+                  Consultar minhas tarefas
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>

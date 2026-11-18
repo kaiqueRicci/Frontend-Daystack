@@ -1,0 +1,51 @@
+<aside class="bg-dark text-white p-4 flex-grow-1">
+  <div class="d-flex flex-column h-100">
+    <div>
+      <p class="small text-white-50 text-uppercase fw-semibold mb-3">
+        Menu principal
+      </p>
+
+      <nav class="nav nav-pills flex-column gap-2" aria-label="Menu lateral">
+        <a
+          routerLink="/dashboard"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          ariaCurrentWhenActive="page"
+          class="nav-link text-white rounded-3 px-3 py-3 fw-semibold"
+        >
+          Dashboard
+        </a>
+
+        <a
+          routerLink="/cadastrar-tarefa"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          class="nav-link text-white rounded-3 px-3 py-3"
+        >
+          Cadastro de tarefas
+        </a>
+
+        <a
+          routerLink="/consultar-tarefa"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          class="nav-link text-white rounded-3 px-3 py-3"
+        >
+          Consulta de tarefas
+        </a>
+      </nav>
+    </div>
+
+    <div class="mt-auto pt-5">
+      <hr class="border-secondary">
+
+      <h2 class="h5 fw-bold mt-4">
+        Sua agenda de tarefas, em um só lugar.
+      </h2>
+
+      <p class="text-white-50 small mb-0">
+        Organize seu dia e acompanhe o que ainda está pendente.
+      </p>
+    </div>
+  </div>
+</aside>

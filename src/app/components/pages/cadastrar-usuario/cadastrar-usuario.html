@@ -1,0 +1,99 @@
+<main class="min-vh-100 d-flex align-items-center bg-body-tertiary py-4 py-lg-5">
+  <div class="container">
+    <div class="card border-0 shadow rounded-4 overflow-hidden">
+      <div class="row g-0">
+        <!-- No desktop, o painel esquerdo mantém a altura do próprio conteúdo. -->
+        <section
+          class="col-lg-5 align-self-lg-stretch bg-dark text-white p-4 p-md-5 d-flex flex-column justify-content-lg-center"
+          aria-labelledby="titulo-todolist">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="d-inline-flex align-items-center justify-content-center bg-white text-primary rounded-3 p-2"
+              aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="5" width="18" height="16" rx="2" />
+                <path d="M8 3v4M16 3v4M3 10h18m-12 5 2 2 4-4" />
+              </svg>
+            </span>
+            <span class="fs-4 fw-bold">Daystack</span>
+          </div>
+
+          <h1 id="titulo-todolist" class="display-5 fw-bold mb-3">
+            Sua agenda de tarefas, em um só lugar.
+          </h1>
+
+          <p class="text-white-50 mb-0">
+            Organize suas tarefas do dia e acompanhe o que ainda está pendente.
+          </p>
+        </section>
+
+        <section class="col-lg-7 bg-body p-4 p-md-5" aria-labelledby="titulo-cadastro">
+          <h2 id="titulo-cadastro" class="h2 fw-bold mb-2">Crie sua conta</h2>
+          <p class="text-body-secondary mb-4">
+            Cadastre-se para ver e gerenciar suas tarefas.
+          </p>
+
+          <form [formGroup]="formCadastro" (ngSubmit)="criarUsuario()">
+            @let nome = formCadastro.get('nome');
+            @let email = formCadastro.get('email');
+            @let senha = formCadastro.get('senha');
+
+            @let nomeInvalido = nome?.touched && nome?.invalid;
+            @let emailInvalido = email?.touched && email?.invalid;
+            @let senhaInvalida = senha?.touched && senha?.invalid;
+
+            <div class="mb-3">
+              <label for="nome" class="form-label fw-semibold">Nome</label>
+              <input id="nome" name="nome" type="text" formControlName="nome" class="form-control form-control-lg"
+                autocomplete="name" placeholder="Seu nome" [class.is-invalid]="nomeInvalido"
+                [attr.aria-invalid]="nomeInvalido ? 'true' : null"
+                [attr.aria-describedby]="nomeInvalido ? 'erro-nome' : null" required>
+              @if (nomeInvalido) {
+              <div id="erro-nome" class="invalid-feedback">
+                O nome deve ter pelo menos 5 caracteres.
+              </div>
+              }
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label fw-semibold">E-mail</label>
+              <input id="email" name="email" type="email" formControlName="email" class="form-control form-control-lg"
+                autocomplete="username" placeholder="voce@exemplo.com" [class.is-invalid]="emailInvalido"
+                [attr.aria-invalid]="emailInvalido ? 'true' : null"
+                [attr.aria-describedby]="emailInvalido ? 'erro-email' : null" required>
+              @if (emailInvalido) {
+              <div id="erro-email" class="invalid-feedback">
+                Informe um endereço de e-mail válido.
+              </div>
+              }
+            </div>
+
+            <div class="mb-4">
+              <label for="senha" class="form-label fw-semibold">Senha</label>
+              <input id="senha" name="senha" type="password" formControlName="senha"
+                class="form-control form-control-lg" autocomplete="new-password" placeholder="Crie uma senha"
+                [class.is-invalid]="senhaInvalida" [attr.aria-invalid]="senhaInvalida ? 'true' : null"
+                [attr.aria-describedby]="senhaInvalida ? 'erro-senha' : null" required>
+              @if (senhaInvalida) {
+              <div id="erro-senha" class="invalid-feedback">
+                A senha deve ter pelo menos 8 caracteres.
+              </div>
+              }
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg w-100 fw-semibold" [disabled]="formCadastro.invalid">
+              Cadastrar
+            </button>
+          </form>
+
+          <div class="border-top mt-4 pt-4 text-center">
+            <p class="text-body-secondary mb-3">Já tem uma conta?</p>
+            <a routerLink="/autenticar" class="btn btn-outline-primary w-100 fw-semibold">
+              Entrar
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</main>
